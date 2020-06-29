@@ -1,0 +1,30 @@
+{% extends "plataforma\base\active_base.html" %}
+
+{% block content %}
+
+<form class="container">
+  <div class="form-group">
+    <label for="formGroupExampleInput">X1</label>
+    <input type="text" class="form-control" id="formGroupExampleInput">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">X2</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2">
+  </div>
+  <div class="form-group">
+  	<label for="formProblemType">Tipo de Problema(Maximização ou Minimização)</label>
+  	<select class="form-control" id="formProblemType">
+  		<option>Min</option>
+  		<option>Max</option>
+	</select>
+  </div>
+  <label>Restrição 1</label>
+  <div class="form-group">
+    <label for="formGroupExampleInput">X1</label>
+    <input type="text" class="form-control" id="formGroupExampleInput1">
+    <label for="formGroupExampleInput2">X2</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2">
+  </div>
+</form>
+
+{% endblock %}
