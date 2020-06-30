@@ -2,8 +2,16 @@ from django import forms
 
 # Formulario Solução Gráfica:
 
-#class AlgoritmoGrafico(forms.Form):
-
+class AlgoritmoGrafico(forms.Form):
+	'''tipos = (
+		("Maximizar"),
+		("Minimizar"),
+	)'''
+	funcao_objetivo_tipo = forms.ChoiceField(choices=[(0,"Minimizar"),(1,"Maximizar")], widget=forms.Select(attrs={'class': 'form-control form-control-sm'}))
+	funcao_objetivo_x1 = forms.DecimalField(initial=0, widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm'}))
+	funcao_objetivo_x2 = forms.DecimalField(initial=0, widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm'}))
+	restricao1_x1 = forms.DecimalField(initial=0, widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm'}))
+	restricao1_x2 = forms.DecimalField(initial=0, widget=forms.NumberInput(attrs={'class': 'form-control form-control-sm', 'name': 'test'}))
 
 '''
 class UsuariosCadastrarForm(forms.Form):

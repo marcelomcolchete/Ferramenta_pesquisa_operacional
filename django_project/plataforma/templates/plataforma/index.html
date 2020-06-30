@@ -2,29 +2,112 @@
 
 {% block content %}
 
-<form class="container">
-  <div class="form-group">
-    <label for="formGroupExampleInput">X1</label>
-    <input type="text" class="form-control" id="formGroupExampleInput">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">X2</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2">
-  </div>
-  <div class="form-group">
-  	<label for="formProblemType">Tipo de Problema(Maximização ou Minimização)</label>
-  	<select class="form-control" id="formProblemType">
-  		<option>Min</option>
-  		<option>Max</option>
-	</select>
-  </div>
-  <label>Restrição 1</label>
-  <div class="form-group">
-    <label for="formGroupExampleInput">X1</label>
-    <input type="text" class="form-control" id="formGroupExampleInput1">
-    <label for="formGroupExampleInput2">X2</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2">
-  </div>
-</form>
+<div class="container my-5">
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col">
+			<h1>Método Gráfico</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<form method="POST">{% csrf_token %}
+						<h5 class="card-title">Informações</h5>
+						<h6 class="my-3">Função Objetivo:</h6>
+						<div class="row">
+							<div class="col-sm-4">
+								{{ form.funcao_objetivo_tipo }}
+								<!--<select class="form-control form-control-sm">
+	  								<option>Maximizar</option>
+	  								<option>Mininizar</option>-->
+								</select>
+							</div>
+							<div class="col-sm-2">
+								{{ form.funcao_objetivo_x1 }}
+								<!--<input class="form-control form-control-sm" type="text" name="x1_fo" id="x1_fo">-->
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">X1</label>
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">+</label>
+							</div>
+							<div class="col-sm-2">
+								{{ form.funcao_objetivo_x2 }}
+								<!-- <input class="form-control form-control-sm" type="text" name="x2_fo" id="x2_fo"> -->
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">X2</label>
+							</div>
+						</div>
+						<h6 class="my-3">Restrições:</h6>
+						<div class="row">
+							<div class="col-sm-2">
+								{{ form.restricao1_x1 }}
+								<!-- <input class="form-control form-control-sm" type="text" name="x1_re1" id="x1_re1">-->
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">X1</label>
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">+</label>
+							</div>
+							<div class="col-sm-2">
+								{{ form.restricao1_x2 }}
+								<!--<input class="form-control form-control-sm" type="text" name="x2_re1" id="x2_re1">-->
+							</div>
+							<div class="col-sm-1">
+								<label for="x1_fo">X2</label>
+							</div>
+							<div class="col-sm-1">
+								<button type="button" class="btn btn-secondary btn-sm">+</button>
+							</div>
+							<div class="col-sm-1">
+								<button type="submit" class="btn btn-primary btn-sm">Executar</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Resultados</h5>
+					<h6>Função Objetivo:</h6>
+					<h6>Restrições:</h6>
+					<h6>Gráfico:</h6>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container my-5">
+	<div class="row">
+		<div class="col-sm-5"></div>
+		<div class="col">
+			<h1>Simplex</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Informações</h5>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Resultados</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
